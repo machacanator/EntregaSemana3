@@ -1,0 +1,11 @@
+<div [ngClass]="{'circle--rotate-right':clicked && button=='left', 'circle--rotate-left':clicked && button=='right', 'circle-container--form-size':animationFinished_1}" class="circle-container">
+  <div [ngClass]="{'circle--selected':button=='left', 'circle__half-left--leave-top':animationFinished_1 && button=='left', 'circle__half-right--leave-bottom':animationFinished_1 && button=='right', 'circle_half--change-size':animationFinished_1}" class="circle circle__half-left" (mouseenter)="hoverLeft()" (mouseleave)="noHover()" (click)="openCircle('left')">
+    <span [ngClass]="{'text--rotate-right':clicked}">Insertar nuevo<br> vuelo</span>
+  </div>
+  <app-form [animationFinished_2]='animationFinished_2' [button]='button' [backToSite]='backToSite' (emitter)='closeCircle($event)' [ngClass]="{'form--display':animationFinished_2 && button=='left', 'form--reverse':backToSite}" class="form"></app-form>
+  <app-flight-board [animationFinished_2]='animationFinished_2' [button]='button' [backToSite]='backToSite' (emitter)='closeCircle($event)' [ngClass]="{'form--display':animationFinished_2 && button=='right', 'form--reverse':backToSite}" class='flight-list'></app-flight-board>
+  <div [ngClass]="{'circle--selected':button=='right', 'circle__half-left--leave-bottom':animationFinished_1 && button=='left', 'circle__half-right--leave-top':animationFinished_1 && button=='right', 'circle_half--change-size':animationFinished_1}" class="circle circle__half-right" (mouseenter)="hoverRight()" (mouseleave)="noHover()" (click)="openCircle('right')">
+    <span [ngClass]="{'text--rotate-left':clicked}">Ver lista <br>de vuelos</span>
+  </div>
+</div>
+<div [ngClass]="{'background-template--hover':hovered}" class="background-template"></div>

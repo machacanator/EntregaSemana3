@@ -1,0 +1,18 @@
+<div class="flight-list__list flight-list__list--long-version" >
+  <table class="flight-card" *ngFor="let flight of getFlightList()">
+    <tr>
+      <td class="flight-card__info id">Id: {{flight.id}}</td>
+      <td class="flight-card__info">Origen: {{flight.from}}</td>
+    </tr>
+    <tr>
+      <td class="flight-card__info">Destino: {{flight.to}}</td>
+      <td class="flight-card__info">Fecha: {{flight.date}}</td>
+    </tr>
+    <tr>
+      <td class="flight-card__info" *ngIf="flight.flightType=='one way'">Tipo de vuelo: Ida</td>
+      <td class="flight-card__info" *ngIf="flight.flightType!='one way'">Tipo de vuelo: Ida y vuelta</td>
+      <td class="flight-card__info">Precio: {{flight.price+" €"}}</td>
+    </tr>
+  </table>
+</div>
+<button class="flight-list__button" (click)="closeList()">Salir</button>

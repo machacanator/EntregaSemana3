@@ -1,0 +1,23 @@
+<div [ngClass]="{'form--display':animationFinished_2 && button=='left', 'form--reverse':backToSite}" [formGroup]="form" class="form">
+    <label class="form__text">Origen</label>
+    <input formControlName="from" class="form__input">
+    <label class="form__text">Destino</label>
+    <input formControlName="to" class="form__input">
+    <label class="form__text">Fecha</label>
+    <span class="form-group">
+      <input formControlName="day" class="form-group__input" [ngStyle]="{'font-family': 'Saira, sans-serif'}" placeholder="Dia">
+      <input formControlName="month" class="form-group__input" [ngStyle]="{'font-family': 'Saira, sans-serif'}" placeholder="Mes">
+      <input formControlName="year" class="form-group__input" [ngStyle]="{'font-family': 'Saira, sans-serif'}" placeholder="Año">
+    </span>
+    <label class="form__text">Tipo de vuelo</label>
+    <select formControlName="type" [ngStyle]="{'font-family': 'Saira, sans-serif'}">
+      <option value="one way" [ngStyle]="{'font-family': 'Saira, sans-serif'}">Solo ida</option>
+      <option value="round trip" [ngStyle]="{'font-family': 'Saira, sans-serif'}">Ida y vuelta</option>
+    </select>
+    <label class="form__text">Precio (€)</label>
+    <input formControlName="price" class="form__input">
+    <span class="form-group">
+      <button class="form-group__button" (click)="finishedForm()" *ngIf="form.status!='INVALID'">Insertar</button>
+      <button class="form-group__button" (click)="closeSite()">Cancelar</button>
+    </span>
+  </div>

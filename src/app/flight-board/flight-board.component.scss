@@ -1,0 +1,65 @@
+.flight-list__list{
+    width:85%;
+    height: 250px;
+    background-color: orange;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top:25px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.flight-list__list--long-version{
+    overflow-y: scroll;
+}
+
+.flight-list__button{
+    width:40%;
+    height:30px;
+    margin-top: 20px;
+    text-align: center;
+    position: fixed;
+    bottom:15px;
+    font-family: 'Lobster';
+}
+
+.flight-card{
+    width:270px;
+    height:100px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #e8ff8d;
+}
+
+.flight-card__info{
+    width: 20%;
+    height:100%;
+    font-family: monospace;
+}
+
+tr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.id{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.flight-list__button:hover{
+    background-color:red ;
+    color: white;
+    border: 3px, solid, black;
+}
